@@ -15,14 +15,10 @@ jobs:
     - name: Doanload & Install files
       run: | 
         Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
-        echo Download: Chrome
-        Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/latest/chrome_installer.exe" -OutFile "chrome_installer.exe"
         echo Install: Chrome
-        Start-Process -FilePath "chrome_installer.exe"
-        echo Download: Chrome Remote Desktop
-        Invoke-WebRequest -Uri "https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" -OutFile "chromeremotedesktophost.msi"
+        & {$P = $env:TEMP + '\chrome_installer.exe'; Invoke-WebRequest 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile $P; Start-Process -FilePath $P -Args '/install' -Verb RunAs -Wait; Remove-Item $P}
         echo Install: Chrome Remote Desktop
-        Start-Process -FilePath "chromeremotedesktophost.msi"
+        & {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
         echo Download: Keep Alive
         Invoke-WebRequest -Uri "https://raw.githubusercontent.com/r3xzt/Github-Action-CRD/main/loop.bat" -OutFile "loop.bat"
     - name: Start Chrome Remote Desktop
