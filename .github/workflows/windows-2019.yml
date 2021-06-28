@@ -1,0 +1,31 @@
+name: Windows Server 2019
+on: 
+  workflow_dispatch:
+    inputs:
+      code:
+        description: 'Chrome Remote Desktop Code'
+        required: true
+      pin:
+        description: '6 Digits PIN'
+        required: true
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: Doanload & Install files
+      run: | 
+        Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+        echo Download: Chrome
+        Invoke-WebRequest "https://dl.google.com/chrome/install/latest/chrome_installer.exe"
+        echo Install: Chrome
+        Start-Process -FilePath "chrome_installer.exe"
+        echo Download: Chrome Remote Desktop
+        Invoke-WebRequest "https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi"
+        echo Install: Chrome Remote Desktop
+        Start-Process -FilePath "chromeremotedesktophost.msi"
+        echo Download: Keep Alive
+        Invoke-WebRequest "https://raw.githubusercontent.com/r3xzt/Github-Action-CRD/main/loop.bat"
+    - name: Start Chrome Remote Desktop
+      run: ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }}
+    - name: Done! You can see the machine in list now.
+      run: cmd /c ./loop.bat
