@@ -1,5 +1,5 @@
 # [GitHub Action CRD (Chrome Remote Desktop)](https://github.com/r3xzt/GitHub-Action-CRD)
-Remote operational GitHub Actions VM for debugging, etc..
+Remote operational GitHub Actions for debugging, etc..
 
 ## **!!! IMPORTANT !!!**
 Actions should not be used for:
@@ -12,6 +12,8 @@ Actions should not be used for:
 I don't accept any responsibility.
 
 ## Available VMs
+* Ubuntu 20.04
+* Ubuntu 18.04
 * Windows Server 2019
 * Windows Server 2016
 
