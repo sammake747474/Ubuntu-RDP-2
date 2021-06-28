@@ -24,4 +24,4 @@ jobs:
     - name: Start Chrome Remote Desktop
       run: ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }}
     - name: Done! You can see the machine in list now.
-      run: cmd /c ./loop.bat
+      run: cmd /c loop.bat
