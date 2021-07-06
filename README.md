@@ -1,5 +1,4 @@
 # [GitHub Action CRD (Chrome Remote Desktop)](https://github.com/r3xzt/GitHub-Action-CRD)
-Remote operational GitHub Actions for debugging, etc..
 
 ## **!!! IMPORTANT !!!**
 Actions should not be used for:
