@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       code:
-        description: 'Chrome Remote Desktop Code (Debian Linux)'
+        description: 'Chrome Remote Desktop Code | Debian Linux'
         required: true
       pin:
         description: '6 Digits PIN'
