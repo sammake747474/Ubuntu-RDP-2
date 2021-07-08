@@ -1,5 +1,7 @@
 # [GitHub Action CRD (Chrome Remote Desktop)](https://github.com/r3xzt/GitHub-Action-CRD)
 
+https://remotedesktop.google.com/headless
+
 ## **!!! IMPORTANT !!!**
 Actions should not be used for:
 * Cryptomining
