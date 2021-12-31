@@ -10,7 +10,7 @@ on:
         required: true
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Create User
       run: sudo useradd -m CRDUser1 && sudo adduser CRDUser1 sudo && echo 'CRDUser1:CRDUser1' | sudo chpasswd
@@ -32,7 +32,7 @@ jobs:
         sudo dpkg --install chrome-remote-desktop_current_amd64.deb
         sudo apt install --assume-yes --fix-broken
         echo Download: Keep Alive
-        wget https://raw.githubusercontent.com/r3xzt/Github-Action-CRD/main/loop.sh
+        wget https://raw.githubusercontent.com/azril0508/Ubuntu-RDP/main/loop.sh
     - name: Start Chrome Remote Desktop
       run: ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }}
     - name: Done! You can see the machine in list now.
