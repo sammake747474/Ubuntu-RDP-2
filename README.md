@@ -12,25 +12,6 @@ I don't accept any responsibility.
 
 ## Available VMs
 * Ubuntu 20.04
-* Ubuntu 18.04
-* Windows Server 2019
-* Windows Server 2016
-
-## Usage
-### First use
-1. Click `Fork` to create a new repository from GitHub-Action-VM.
-
-### Start
-1. Go to [https://remotedesktop.google.com/headless](https://remotedesktop.google.com/headless).
-2. `Begin` > `Next` > `Authorize` > Copy command. ( [Which command?](#which-command) )
-3. Go to `Actions` > (The VM you want to use. ex. Windows Server 2019) > `Run workflow` > `Run workflow`.
-4. Reload and click the latest Workflow runs.
-5. Wait until `Start Chrome Remote Desktop` end.
-6. Done! You can see the machine in list now.
-* When you're done introspecting, cancel the job.
 
 ### Which command?
-* Windows Server 2019 > `Windows (PowerShell)`
-* Windows Server 2016 > `Windows (PowerShell)`
 * Ubuntu 20.04 > `Debian Linux`
-* Ubuntu 18.04 > `Debian Linux`
